@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js'></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+    <link rel="stylesheet" href="Style.css"/>
+  </head>
+  <body id="whole">
+<div class="space">
+  <div class="w3-top">
+    <br>
+    <div id="navbar">
+    <a href="home.html" class="w3-bar-item w3-button active"  >Home</a>
+    <a href="upload.html" class="w3-bar-item w3-button">Upload</a>
+    <a href="search.html" class="w3-bar-item w3-button">Search</a>
+    <a href="review.html" class="w3-bar-item w3-button">Review</a>
+  </div>
+</div>
+  </body>
+  <!-- <script type="text/javascript">
+    function loadBG(){
+        document.getElementById("whole").style.backgroundImage="url(C:/daochu/DBS/image/background.png)";
+    }
+    window.onload=loadBG();
+  </script> -->
+  <script>
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-50px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+</script>
+</html>

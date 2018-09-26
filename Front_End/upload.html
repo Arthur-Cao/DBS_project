@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js'></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+    <link rel="stylesheet" href="Style.css"/>
+
+  </head>
+  <body id="whole">
+    <div class="space">
+      <div class="w3-top">
+        <br>
+        <div id="navbar">
+          <a href="home.html" class="w3-bar-item w3-button">Home</a>
+          <a href="upload.html" class="w3-bar-item w3-button active">Upload</a>
+          <a href="search.html" class="w3-bar-item w3-button">Search</a>
+          <a href="review.html" class="w3-bar-item w3-button" >Review</a>
+        </div>
+
+
+      </div>
+      <br>
+      <br>
+      <div id="divUpload">
+        <form id="Upload" >
+            <div class="">
+          <div class="tableContainer-1">
+            <div class="tableContainer-2">
+              <br>
+                  <div style="padding-left:100px;padding-bottom:2px">
+                  <h3 style="padding-bottom:13px">1.Upload your file</h3>
+                  </div>
+                  <div style="padding-left:130px;padding-bottom:1px">
+                    <input  type="file" name="file" id="fileInput"/>
+                </div>
+                <div style="padding-left:100px;padding-top:20px">
+                <h3 style="padding-bottom:1px">2.Descriptions</h3>
+                </div>
+              <table class="table1">
+              <tr>
+              <td>
+                  <select id="location" class="box" name="selector" required oninvalid="this.setCustomValidity('Please select a location')" oninput="this.setCustomValidity('')">
+                   <option value="" disabled selected hidden>Location</option>
+                   <option value="[HO]Singapore">[HO]Singapore</option>
+                   <option value="[CM]China">[CM]China</option>
+                   <option value="[CM]Hong Kong">[CM]Hong Kong</option>
+                   <option value="[CM]India">[CM]India</option>
+                   <option value="[CM]Indonesia">[CM]Indonesia</option>
+                   <option value="[CM]TaiWan">[CM]TaiWan</option>
+                   <option value="[IC]Dubai">[IC]Dubai</option>
+                   <option value="[IC]Ho Chi Minh">[IC]Ho Chi Minh</option>
+                   <option value="[IC]Labuan">[IC]Labuan</option>
+                   <option value="[IC]London">[IC]London</option>
+                   <option value="[IC]Los Angeles">[IC]Los Angeles</option>
+                   <option value="[IC]Seoul">[IC]Seoul</option>
+                   <option value="[IC]Sydney">[IC]Sydney</option>
+                   <option value="[IC]Tokyo">[IC]Tokyo</option>
+                   <option value="[IC]Buangkok">[IC]Buangkok</option>
+                   <option value="[RO]Manila">[RO]Manila</option>
+                   <option value="[RO]Yangon">[RO]Yangon</option>
+                   <option value="TBD">TBD</option>；
+                  </select>
+              </td>
+               <td>
+                 <select id="type" class="box"  name="selector" required oninvalid="this.setCustomValidity('Please choose meeting type')" oninput="this.setCustomValidity('')">
+                  <option value="" disabled selected hidden style="color:#666666">Meeting Type</option>
+                  <option value="[CM]Country Reports">[CM]Country Reports</option>
+                  <option value="[CM]SME Portfolio Reports">[CM]SME Portfolio Reports</option>
+                  <option value="[AML]Financial Reports">[AML]Financial Reports</option>
+                  <option value="[AML]SME Regional Credit Fraud Risk Management Business Letter">[AML]SME Regional Credit Fraud Risk Management Business Letter</option>
+                  <option value="[BRC]Country Limit Monitorng-Exposure Reports">[BRC]Country Limit Monitorng-Exposure Reports</option>
+                  <option value="[BCR]CRANE Reports">[BCR]CRANE Reports</option>
+                  <option value="[BCR]GCRC Deck">[BCR]GCRC Deck</option>
+                  <option value="[BCR]Group Weak Credits Meeting">[BCR]Group Weak Credits Meeting</option>
+                  <option value="[BCR]IBG Business Control Committee">[BCR]IBG Business Control Committee</option>
+                  <option value="[BCR]ICC Control Committee">[BCR]ICC Control Committee</option>
+                  <option value="[BCR]Group Op Risk Committee(GORC)">[BCR]Group Op Risk Committee(GORC)</option>
+                  <option value="[Op]Op Risk Forum">[Op]Op Risk Forum</option>
+                  <option value="[Proj]Credit Architecture PSC">[Proj]Credit Architecture PSC</option>
+                  <option value="[TF]COBRA">[TF]COBRA</option>
+                  <option value="[YF]Structure Trade and Commodity Portfolio">[YF]Structure Trade and Commodity Portfolio</option>
+                  <option value="[OTHERS]CRR">[OTHERS]CRR</option>
+                  <option value="[OTHERS]CPR">[OTHERS]CPR</option>
+                  <option value="TBD">TBD</option>
+                  <option value="[OTHERS]GTS">[OTHERS]GTS</option>
+                 </select>
+               </td>
+               <tr>
+                 <td>
+                   <select id="year" class="box"  name="selector" required oninvalid="this.setCustomValidity('Please select year')" oninput="this.setCustomValidity('')">
+                     <option value="" disabled selected hidden style="color:#666666">Year</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>;
+                   </select>
+                 </td>
+                 <td>
+                   <select id="month" class="box"  name="selector" required oninvalid="this.setCustomValidity('Please select month')" oninput="this.setCustomValidity('')">
+                     <option value="" disabled selected hidden style="color:#666666">Month</option>
+                    <option value="Jan">Jan</option>
+                    <option value="Feb">Feb</option>
+                    <option value="Mar">Mar</option>
+                    <option value="Apr">Apr</option>
+                    <option value="May">May</option>
+                    <option value="Jun">Jun</option>
+                    <option value="Jul">Jul</option>
+                    <option value="Aug">Aug</option>
+                    <option value="Sep">Sep</option>
+                    <option value="Oct">Oct</option>
+                    <option value="Nov">Nov</option>
+                    <option value="Dec">Dec</option>;
+                   </select>
+                 </td>
+               </tr>
+          <tr>
+            <td>
+              <select id="sensitive" class="box"  name="selector" required oninvalid="this.setCustomValidity('Please set sensitive level')" oninput="this.setCustomValidity('')">
+                <option value="" disabled selected hidden style="color:#666666">Important Level</option>
+               <option value="NA">NA</option>
+               <option value="Low">Low</option>
+               <option value="Medium">Medium</option>
+               <option value="High">High</option>
+              </select>
+            </td>
+          </tr>
+             </table>
+            </div>
+          </div >
+          <input type="submit" name="submit" value="Submit" class="btn1" id="submit" />
+        </div>
+      </form>
+  </div>
+<div style="display:none" id="divConfirm">
+
+
+      <form id="ConfirmationForm">
+        <div class="">
+          <br>
+          <table class="table2" id="Confirmation_Table">
+            <tr>
+              <th>FileName</th>
+              <th>Location</th>
+              <th>Type</th>
+              <th>Year</th>
+              <th>Month</th>
+              <th>Importance</th>
+              <th>Keywords</th>
+              <th>Entities</th>
+            </tr>
+          </table>
+          <br>
+          <br>
+          <input type="button" name="confirm" value="Confirm" class="btn" id="cfn" onclick="cfnPro()">
+        </div>
+      </form>
+</div>
+
+    </div>
+    <script type="text/javascript">
+
+    $("#file").change(function() {
+        console.log(this.files);
+        console.log(this.files.mozFullPath);
+    });
+
+
+      $(document).ready(function(){
+        var dic = {};
+        $('input[type="file"]').change(function(e){
+            var key = "fileInput";
+            var fileName = e.target.files[0].name;
+            dic[key] = fileName;
+                    });
+          $('#Upload').bind('submit',function(){
+              $('#Upload').find('select').each(function (){
+                var id =  $(this).attr('id');
+                var values =  $(this).val();
+                dic[id] = values;
+                console.log(dic);
+              }
+            );
+            console.log(dic);
+            $.ajax(
+                         {
+                             type: 'POST',
+                             url: "http://127.0.0.1:5002/uploadPageSubmit",
+                             dataType: "json",
+                             contentType: 'application/json; charset=utf-8',
+                             data: JSON.stringify(dic),
+                             success: function (check) {
+                               var te=check['filename']
+                               var t='1'
+                               if (check['keyword'] != '')
+                               {
+                                 alert('Successfully submit');
+                                 showTable(check);
+                               }else {
+                                  alert('Fail');
+                                 }
+                                 var testabc='aaa'
+                                 var tes1="22"
+                             }
+                         }
+                    );
+                    var te='a'
+                    var te='ddd'
+                    return false;
+         });
+
+      });
+</script>
+
+<script type="text/javascript">
+      function showTable(check){
+        var dictionary1 = {
+          "FileName": check['filename'],
+          "Location": check['location'],
+          "Type": check['type'],
+          "Year": check['year'],
+          "Month": check['month'],
+          "Sensitive": check['sensitive'],
+          "Keyword": check['keyword'].slice(0,5),
+          "Entity": check['entity'].slice(0,5),
+        }
+        console.log(dictionary1)
+
+        var row ="";
+        var count = 0;
+        row +="<tr>" ;
+
+        var random_id = function  ()
+        {
+          var id_num = Math.random().toString(9).substr(2,3);
+          var id_str = Math.random().toString(36).substr(2);
+
+          return id_num + id_str;
+        }
+
+        var tbl = '';
+        tbl +='<tbody>';
+        var row_id = random_id();
+        tbl +='<tr row_id="'+row_id+'">';
+          $.each(dictionary1, function(index, val)
+          {
+              tbl +='<td style="word-break:break-all;border: 1px solid black;"><div class="row_data" edit_type="click"'+'id ='+  index  +'col_name="fname">'+val+'</div></td>';
+          });
+          tbl +='</tr>';
+         tbl +='</tbody>';
+        $("#Confirmation_Table").append(tbl);
+        $("#divUpload").css({display:"none"});
+        $("#divConfirm").css({display:"block"});
+        $(document).on('click', '.row_data', function(event)
+         {
+          event.preventDefault();
+          if($(this).attr('edit_type') == 'button')
+            {
+                return false;
+            }
+       $(this).closest('div').attr('contenteditable', 'true');
+       $(this).addClass('bg-warning').css('padding','5px');
+
+       $(this).focus();
+      })
+    $(document).on('focusout', '.row_data', function(event)
+    {
+      event.preventDefault();
+
+      if($(this).attr('edit_type') == 'button')
+      {
+        return false;
+      }
+
+      var row_id = $(this).closest('tr').attr('row_id');
+
+      var row_div = $(this)
+      .removeClass('bg-warning')
+      .css('padding','')
+
+      var col_name = row_div.attr('col_name');
+      var col_val = row_div.html();
+      var kw = [];
+      kw = col_val.split(",");
+      var dictionary2 = {
+        "FileName": check['filename'],
+        "Location": check['location'],
+        "Type": check['type'],
+        "Year": check['year'],
+        "Month": check['month'],
+        "Sensitive": check['sensitive'],
+        "Keyword": kw,
+        "Entity": check['entity'].slice(0,5),
+      }
+      alert(dictionary2["Keyword"]);
+
+      $("#cfn").click(function(){
+        cfnPro(dictionary2);
+      })
+    })
+}
+</script>
+
+<script type="text/javascript">
+function cfnPro(dic){
+
+  $.ajax(
+               {
+                 type: 'POST',
+                 url: "http://127.0.0.1:5002/keywordsConfirmation",
+                 dataType: "json",
+                 contentType: 'application/json; charset=utf-8',
+                 data: JSON.stringify(dic),
+                 success: function (data) {
+                 window.location.href = "search.html"
+					       var ts="abc"
+					       var b="adf"
+                }
+               })
+
+}
+</script>
+<script>
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-50px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+</script>
+ </body>
+</html>

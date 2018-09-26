@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+    <link rel="stylesheet" href="Style.css"/>
+  </head>
+  <body id="whole">
+    <div class="space">
+      <div class="w3-top">
+        <br>
+        <div id="navbar">
+          <a href="home.html" class="w3-bar-item w3-button">Home</a>
+          <a href="upload.html" class="w3-bar-item w3-button">Upload</a>
+          <a href="search.html" class="w3-bar-item w3-button">Search</a>
+          <a href="review.html" class="w3-bar-item w3-button active" >Review</a>
+        </div>
+      </div>
+      <div id="showRelated">
+      <table>
+        <tr>
+          <td><br>
+            <h3 style="color:black">Review Document</h3></td>
+          <td><br>
+            <h3 style="color:black">Documents Related</h3></td>
+        </tr>
+        <tr>
+          <br>
+          <td><iframe src="" width="800px" height="400px" id="Embed"></iframe></td>
+         <td style="display:block;">
+          <table id="related" >
+           <!-- 我要将后端传来的相关文档路径放在此table中，下面有相关的script  -->
+          </table>
+         </td>
+        </tr>
+      </table>
+    </div>
+<div id="NoRelated" style="display:none">
+  <h2 style="color:red;position:center;margin-top:100px;margin-left:50px">No Selection From Previous Page</h2>
+</div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+          var myData = localStorage['selected'];
+          localStorage.removeItem( 'selected' );
+          if (myData==null) {
+            $("#NoRelated").css("display","block");
+            $("#showRelated").css("display","none");
+          }else {
+
+            $("#Embed").attr("src","C:/Findingaudit/Rawdata/" + myData)
+            var dic1 = {"DocumentName":myData}
+            $.ajax(
+                         {
+                             type: 'POST',
+                             url: "http://127.0.0.1:5002/Review",
+                             dataType: "json",
+                             contentType: 'application/json; charset=utf-8',
+                             data: JSON.stringify(dic1),
+                             success: function (data) {
+                                displayRel(data);
+                                repla()
+                             }
+                  })
+                 return false;
+          }
+
+        })
+       function displayRel(data){
+       $.each(data,function(index,value){
+       var row = "";
+       row +="<tr>" ;
+       row += "<td style='word-break:break-all;border-button:1px solid black;padding-left:2px'>"+ value +"</td>";
+       row += "</tr>";
+       $("#related").append( row );
+    });
+  }
+       function repla(){
+         $('#related tr td:nth-child(1)').click(function(){
+         var rel = $(this).html();
+         alert(rel);
+         $("#Embed").attr("src","C:/Findingaudit/Rawdata/" + rel)
+         })
+
+       }
+    </script>
+    <script>
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-50px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+</script>
+  </body>
+</html>
